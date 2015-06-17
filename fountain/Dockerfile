@@ -33,9 +33,6 @@ ENV CONFIG agora_fountain.server.config.ProductionConfig
 # Create directories & virtual env for the Planner
 RUN virtualenv $HOME/.env
 WORKDIR /usr/lib/agora
-RUN git clone https://github.com/smartdeveloperhub/agora-fountain.git
-WORKDIR /usr/lib/agora/agora-fountain
-RUN $HOME/.env/bin/pip install -r requirements.txt
 
 # Configure runit
 ADD ./my_init.d/ /etc/my_init.d/

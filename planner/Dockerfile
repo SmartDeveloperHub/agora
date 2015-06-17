@@ -33,9 +33,6 @@ ENV CONFIG agora_planner.server.config.ProductionConfig
 # Create directories & virtual env for the Planner
 RUN virtualenv $HOME/.env
 WORKDIR /usr/lib/agora
-RUN git clone https://github.com/smartdeveloperhub/agora-planner.git
-WORKDIR /usr/lib/agora/agora-planner
-RUN $HOME/.env/bin/pip install -r requirements.txt
 
 # Configure runit
 ADD ./my_init.d/ /etc/my_init.d/
