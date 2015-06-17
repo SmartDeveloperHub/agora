@@ -1,0 +1,44 @@
+redis:
+  hostname: redis
+  domainname: localdomain
+  build: redis
+  ports:
+    - "6379:6379"  
+
+fountain:
+  build: fountain
+  hostname: fountain
+  domainname: localdomain
+  ports:    
+    - "5002:5002"
+    - "2223:22"
+  links:
+    - redis:redis
+  command: /sbin/my_init --enable-insecure-key
+
+planner:
+  build: planner
+  hostname: planner
+  domainname: localdomain
+  ports:
+    - "5000:5000"
+    - "2224:22"    
+  links:
+    - fountain:fountain
+    - redis:redis
+  command: /sbin/my_init --enable-insecure-key
+
+nginx:
+  build: nginx
+  hostname: nginx
+  domainname: localdomain
+  links:
+    - planner:planner
+    - fountain:fountain
+  ports:
+    - "9001:80"
+  volumes:
+    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+
+
+
