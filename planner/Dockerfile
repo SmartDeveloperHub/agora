@@ -28,7 +28,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -qq -y install \
         supervisor
 
 ENV HOME /usr/lib/agora
-ENV CONFIG agora_planner.server.config.ProductionConfig
+ENV CONFIG agora.planner.server.config.ProductionConfig
 
 # Create directories & virtual env for the Planner
 RUN virtualenv $HOME/.env
