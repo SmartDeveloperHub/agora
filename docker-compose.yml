@@ -10,6 +10,10 @@ fountain:
   links:
     - redis:redis
   command: /sbin/my_init
+  environment:
+    - TERM=xterm
+    - AGORA_FOUNTAIN_VERSION=0.4.0.dev5
+    - FOUNTAIN_CONFIG=agora.fountain.server.config.ProductionConfig
 
 planner:
   build: planner
@@ -19,6 +23,10 @@ planner:
     - fountain:fountain
     - redis:redis
   command: /sbin/my_init
+  environment:
+    - TERM=xterm
+    - AGORA_PLANNER_VERSION=0.3.0.dev0
+    - PLANNER_CONFIG=agora.planner.server.config.ProductionConfig
 
 nginx:
   build: nginx
