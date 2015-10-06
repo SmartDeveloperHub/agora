@@ -2,6 +2,8 @@ redis:
   hostname: redis
   domainname: localdomain
   image: redis
+  ports:
+    - "6379:6379"
 
 fountain:
   image: smartdeveloperhub/agora-fountain
