@@ -1,10 +1,10 @@
 redis:
   hostname: redis
   domainname: localdomain
-  build: redis
+  image: redis
 
 fountain:
-  build: fountain
+  image: smartdeveloperhub/agora-fountain
   hostname: fountain
   domainname: localdomain
   links:
@@ -16,7 +16,7 @@ fountain:
     - FOUNTAIN_CONFIG=agora.fountain.server.config.ProductionConfig
 
 planner:
-  build: planner
+  image: smartdeveloperhub/agora-planner
   hostname: planner
   domainname: localdomain
   links:
