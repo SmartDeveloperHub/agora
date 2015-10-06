@@ -11,7 +11,6 @@ fountain:
   domainname: localdomain
   links:
     - redis:redis
-  command: /sbin/my_init
   environment:
     - TERM=xterm
     - FOUNTAIN_CONFIG=agora.fountain.server.config.ProductionConfig
@@ -23,7 +22,6 @@ planner:
   links:
     - fountain:fountain
     - redis:redis
-  command: /sbin/my_init
   environment:
     - TERM=xterm
     - PLANNER_CONFIG=agora.planner.server.config.ProductionConfig
