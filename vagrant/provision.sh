@@ -1,24 +1,4 @@
 #!/bin/sh
  
-ROOT=$(pwd)
-
-Update() {
-    VC_DIR=$1/.git
- 
-    if [ ! -d $VC_DIR ]
-    then
-        echo "Repository is not present, need to clone."
-        git clone $2 $1
-    else
-        echo "Pulling..."
-        cd $1
-        git pull $2
-        cd $ROOT
-    fi
-}
-
-echo "> Agora"
-Update agora https://github.com/smartdeveloperhub/agora.git
-
-cd agora
+cd /vagrant
 sudo docker-compose build

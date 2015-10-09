@@ -1,3 +1,3 @@
 #!/bin/sh
-cd agora
+cd /vagrant
 sudo docker-compose up -d --no-recreate
