@@ -6,7 +6,7 @@ redis:
     - "6379:6379"
 
 fountain:
-  image: smartdeveloperhub/agora-fountain
+  image: smartdeveloperhub/agora-fountain:dev
   hostname: fountain
   domainname: localdomain
   links:
@@ -14,9 +14,10 @@ fountain:
   environment:
     - TERM=xterm
     - FOUNTAIN_CONFIG=agora.fountain.server.config.ProductionConfig
+    - LOG_LEVEL=DEBUG
 
 planner:
-  image: smartdeveloperhub/agora-planner
+  image: smartdeveloperhub/agora-planner:dev
   hostname: planner
   domainname: localdomain
   links:
@@ -25,6 +26,7 @@ planner:
   environment:
     - TERM=xterm
     - PLANNER_CONFIG=agora.planner.server.config.ProductionConfig
+    - LOG_LEVEL=DEBUG
 
 nginx:
   build: nginx
