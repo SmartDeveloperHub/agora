@@ -10,5 +10,6 @@ pip install -r requirements.txt
 
 # Build docker containers
 cd /vagrant
+sudo docker-compose rm -f
 sudo docker-compose build
 
