@@ -14,6 +14,7 @@ fountain:
   environment:
     - TERM=xterm
     - FOUNTAIN_CONFIG=agora.fountain.server.config.ProductionConfig
+    - LOG_LEVEL=DEBUG
 
 planner:
   image: smartdeveloperhub/agora-planner
@@ -25,6 +26,7 @@ planner:
   environment:
     - TERM=xterm
     - PLANNER_CONFIG=agora.planner.server.config.ProductionConfig
+    - LOG_LEVEL=DEBUG
 
 nginx:
   build: nginx
